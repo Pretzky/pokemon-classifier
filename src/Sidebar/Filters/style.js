@@ -4,6 +4,7 @@ export const FiltersWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 20rem;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;

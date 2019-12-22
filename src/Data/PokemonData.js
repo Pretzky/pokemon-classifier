@@ -999,7 +999,7 @@ const PokemonData = [
 	{
 		name: "Mamoswine",
 		localNum: "077",
-		nationalNum: "222",
+		nationalNum: "473",
 		types: [
 			"Ice",
 			"Ground"

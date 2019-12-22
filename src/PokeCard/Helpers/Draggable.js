@@ -59,10 +59,11 @@ class Draggable extends React.PureComponent {
       contact = true;
     if (contact) {
       this.props.countMon(this.props.draggingMon);
-      this.props.selectMon(null);
+      this.props.dragMon(null);
     }
     else {
-      this.props.selectMon(null);
+      this.props.selectMon(this.props.draggingMon);
+      this.props.dragMon(null);
     }
 
     event.preventDefault();

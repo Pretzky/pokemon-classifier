@@ -13,3 +13,14 @@ export const evoGroups = () => {
   });
   return groups;
 };
+
+export const findMon = (name) => {
+  var foundMon = null;
+  PokemonData.forEach(mon => {
+    if (mon.name === name) {
+      foundMon = mon;
+      return;
+    }
+  })
+  return foundMon;
+}

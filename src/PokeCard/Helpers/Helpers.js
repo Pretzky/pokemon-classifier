@@ -30,7 +30,7 @@ export function simulate(element, eventName)
   if (document.createEvent)
   {
     oEvent = document.createEvent(eventType);
-    if (eventType == 'HTMLEvents')
+    if (eventType === 'HTMLEvents')
     {
       oEvent.initEvent(eventName, options.bubbles, options.cancelable);
     }

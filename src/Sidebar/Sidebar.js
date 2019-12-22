@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import PokemonData from '../Data/PokemonData';
-import PokeCard from '../PokeCard/PokeCard';
 import Filters from './Filters/Filters';
 import {
   WrapperWithFilters,

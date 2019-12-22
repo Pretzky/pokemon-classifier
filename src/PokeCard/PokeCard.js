@@ -17,11 +17,6 @@ class PokeCard extends Component {
 
   _move = (x, y) => this.setState({ x, y });
 
-  componentDidMount() {
-    const id = this.props.mon.name + "Card";
-    // dragElement(document.getElementById(id));
-  }
-
   render() {
     const imgUrl = "https://www.serebii.net/Shiny/SWSH/" + this.props.mon.nationalNum + ".png";
     const id = this.props.mon.name + "Card";
@@ -38,6 +33,7 @@ class PokeCard extends Component {
           ySize={64}
           onMove={this._move} 
           draggingMon={this.props.mon}
+          dragMon={this.props.dragMon}
           selectMon={this.props.selectMon}
           countMon={this.props.countMon}
           xOffset={-700} 
@@ -66,7 +62,7 @@ class PokeCard extends Component {
     }
     else {
       return (
-        <CardWrapper id={id} onMouseDown={() => {this.props.selectMon(this.props.mon)}}>
+        <CardWrapper id={id} onMouseDown={() => {this.props.dragMon(this.props.mon)}}>
           <LeftCardWrapper>
             <img height="65px" width="65px" alt={this.props.mon.name} src={imgUrl} />
           </LeftCardWrapper>

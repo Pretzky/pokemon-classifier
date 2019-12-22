@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Counter from './Counter/Counter';
 import Sidebar from './Sidebar/Sidebar';
+import PokePage from './PokePage/PokePage';
 import PokeCard from './PokeCard/PokeCard';
 import PokemonData from './Data/PokemonData';
 import { evoGroups } from './Data/DataManipulation';
@@ -10,7 +11,7 @@ import { Route } from 'react-router-dom';
 
 
 class App extends Component {
-  state = { userData: null, draggingMon: null, countingMon: null, filters: {
+  state = { userData: null, draggingMon: null, countingMon: null, selectedMon: null, filters: {
     name: "",
     types: []
   } }
@@ -54,12 +55,16 @@ class App extends Component {
     this.setState({ userData: { groups: data } });
   };
 
-  selectMon = (mon) => {
+  dragMon = (mon) => {
     this.setState({ draggingMon: mon });
   };
 
   countMon = (mon) => {
     this.setState({ countingMon: mon });
+  }
+
+  selectMon = (mon) => {
+    this.setState({ selectedMon: mon });
   }
 
   onSearchChange = (e) => {
@@ -81,8 +86,6 @@ class App extends Component {
         <Route exact path="/" render={() =>
           <>
             <Sidebar
-              draggingMon={this.state.draggingMon}
-              selectMon={this.selectMon}
               onSearchChange={this.onSearchChange}
               setFilters={this.setFilters} 
               filters={this.state.filters}>
@@ -98,9 +101,13 @@ class App extends Component {
                   })
                   if (!hasTypeFilters) return null;
 
-                  return <PokeCard key={i} mon={mon} selectMon={this.selectMon} draggable={false}/>
+                  return <PokeCard key={i} mon={mon} dragMon={this.dragMon} draggable={false}/>
                 })}
             </Sidebar>
+            <PokePage
+              userData={this.state.userData}
+              mon={this.state.selectedMon}
+            />
             <Counter 
               userData={this.state.userData} 
               incCount={this.incCount}
@@ -110,6 +117,7 @@ class App extends Component {
             {this.state.draggingMon && 
               <PokeCard 
                 mon={this.state.draggingMon}
+                dragMon={this.dragMon}
                 selectMon={this.selectMon}
                 countMon={this.countMon}
                 draggable

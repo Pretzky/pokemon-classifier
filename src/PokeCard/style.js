@@ -5,6 +5,7 @@ export const CardWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  z-index: 2;
   margin: 0.1rem;
   border-radius: 10px;
   width: 18rem;
@@ -26,7 +27,7 @@ export const LeftCardWrapper = styled.div`
   width: 65px;
   height: 100%;
   background: #ccc;
-  z-index: 1;
+  z-index: 3;
 `;
 
 export const RightCardWrapper = styled.div`

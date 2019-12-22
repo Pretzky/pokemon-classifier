@@ -51,7 +51,7 @@ class Counter extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.expanded != this.state.expanded) {
+    if (prevState.expanded !== this.state.expanded) {
       this.setState({ onRenderCount: this.state.onRenderCount + 1 });
       onRender(this.props.userData, this.props.incCount, this.props.decCount, this.getCurrentGroup, this.getCounting, this.getOnRenderCount);
     }
@@ -83,7 +83,7 @@ class Counter extends Component {
             <ConstantDisplay>
               <LeftArea>
                 <SelectedMonArea monSelected={monSelected}>
-                  {this.props.countingMon ? <PokeCard mon={this.props.countingMon} selectMon={() => {}}/> : "Drag pokemon here"}
+                  {this.props.countingMon ? <PokeCard mon={this.props.countingMon} dragMon={() => {}}/> : "Drag pokemon here"}
                 </SelectedMonArea>
                 <EvoGroupArea>
                   {this.props.countingMon ? "Group:\n" + this.props.countingMon.evolutionChain.map((p) => {return " " + p}) : ""}
@@ -108,7 +108,7 @@ class Counter extends Component {
             <ConstantDisplay>
               <LeftArea>
                 <SelectedMonArea monSelected={monSelected}>
-                  {this.props.countingMon ? <PokeCard mon={this.props.countingMon} selectMon={() => {}}/> : "Drag pokemon here"}
+                  {this.props.countingMon ? <PokeCard mon={this.props.countingMon} dragMon={() => {}}/> : "Drag pokemon here"}
                 </SelectedMonArea>
                 <EvoGroupArea>
                   {this.props.countingMon ? "Group:\n" + this.props.countingMon.evolutionChain.map((p) => {return " " + p}) : ""}
