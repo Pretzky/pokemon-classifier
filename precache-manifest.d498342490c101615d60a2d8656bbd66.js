@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c77743bd4ba0de265123962ffe1a3f7c",
+    "revision": "cf83739825aeecf6c0f2b6b95dd95f15",
     "url": "/pokemon-classifier/index.html"
   },
   {
-    "revision": "adb396d207b2e0bebe27",
+    "revision": "48c5b048a726df08b270",
     "url": "/pokemon-classifier/static/css/main.041ddd81.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokemon-classifier/static/js/2.67eb037d.chunk.js.LICENSE"
   },
   {
-    "revision": "adb396d207b2e0bebe27",
-    "url": "/pokemon-classifier/static/js/main.671f440d.chunk.js"
+    "revision": "48c5b048a726df08b270",
+    "url": "/pokemon-classifier/static/js/main.3dea4fb7.chunk.js"
   },
   {
     "revision": "a9c4ec6f9ef8162ceb3b",
