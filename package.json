@@ -1,5 +1,5 @@
 {
-  "homepage": "http://pretzky.github.io/pokemon-classifier",
+  "homepage": "http://Pretzky.github.io/pokemon-classifier",
   "name": "pokemon-classifier",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
     "styled-components": "^4.4.1"
   },
