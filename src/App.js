@@ -6,7 +6,7 @@ import PokeCard from './PokeCard/PokeCard';
 import PokemonData from './Data/PokemonData';
 import { evoGroups } from './Data/DataManipulation';
 import { arraysEqual } from './Utilities/ArraysEqual';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 
 class App extends Component {
