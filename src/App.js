@@ -78,42 +78,44 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route exact path={'/'}>
-          <Sidebar
-            draggingMon={this.state.draggingMon}
-            selectMon={this.selectMon}
-            onSearchChange={this.onSearchChange}
-            setFilters={this.setFilters} 
-            filters={this.state.filters}>
-              {PokemonData.map((mon, i) => {
-                if (!mon.name.toLowerCase().includes(this.state.filters.name.toLowerCase())) return null;
-
-                let hasTypeFilters = true;
-                this.state.filters.types.forEach(type => {
-                  if (!mon.types.includes(type)) {
-                    hasTypeFilters = false;
-                    return;
-                  }
-                })
-                if (!hasTypeFilters) return null;
-
-                return <PokeCard key={i} mon={mon} selectMon={this.selectMon} draggable={false}/>
-              })}
-          </Sidebar>
-          <Counter 
-            userData={this.state.userData} 
-            incCount={this.incCount}
-            decCount={this.decCount}
-            countingMon={this.state.countingMon}
-          />
-          {this.state.draggingMon && 
-            <PokeCard 
-              mon={this.state.draggingMon}
+        <Route exact path="/" render={() =>
+          <>
+            <Sidebar
+              draggingMon={this.state.draggingMon}
               selectMon={this.selectMon}
-              countMon={this.countMon}
-              draggable
-            />}
-        </Route>
+              onSearchChange={this.onSearchChange}
+              setFilters={this.setFilters} 
+              filters={this.state.filters}>
+                {PokemonData.map((mon, i) => {
+                  if (!mon.name.toLowerCase().includes(this.state.filters.name.toLowerCase())) return null;
+
+                  let hasTypeFilters = true;
+                  this.state.filters.types.forEach(type => {
+                    if (!mon.types.includes(type)) {
+                      hasTypeFilters = false;
+                      return;
+                    }
+                  })
+                  if (!hasTypeFilters) return null;
+
+                  return <PokeCard key={i} mon={mon} selectMon={this.selectMon} draggable={false}/>
+                })}
+            </Sidebar>
+            <Counter 
+              userData={this.state.userData} 
+              incCount={this.incCount}
+              decCount={this.decCount}
+              countingMon={this.state.countingMon}
+            />
+            {this.state.draggingMon && 
+              <PokeCard 
+                mon={this.state.draggingMon}
+                selectMon={this.selectMon}
+                countMon={this.countMon}
+                draggable
+              />}
+          </>
+        } />
       </div>
     );
   }
